@@ -24,7 +24,16 @@ const AddProduct = () => {
             },
             body: JSON.stringify(productData)
         })
-        .then(res => console.log('server side response', res));
+        // .then(res => console.log('server side response', res));
+        .then(res => {
+            if(res.ok){
+                alert(productData.name + 'added successfully to database');
+            }
+            else{
+                alert(productData.name + 'Product not added. Please try again');
+            }
+        });
+
     };
     
 
