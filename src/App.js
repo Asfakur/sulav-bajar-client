@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 import Home from "./Home/Home";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Header from "./components/Header/Header";
+import AddProduct from "./components/AddProduct/AddProduct";
 
 export const UserContext = createContext(); //must be export 
 
@@ -25,6 +26,10 @@ function App() {
           <Switch>
             <Route path="/home">
               <Home></Home>
+            </Route>
+
+            <Route path="/addProduct">
+              <AddProduct></AddProduct>
             </Route>
 
             <PrivateRoute path="/checkout">
