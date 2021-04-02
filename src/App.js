@@ -12,8 +12,9 @@ import Login from "./components/Login/Login";
 import Home from "./Home/Home";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Header from "./components/Header/Header";
-import AddProduct from "./components/AddProduct/AddProduct";
 import Orders from "./components/Orders/Orders";
+
+import DashBoard from "./components/Admin/DashBoard";
 
 export const UserContext = createContext(); //must be export 
 
@@ -24,18 +25,15 @@ function App() {
       {/* <p>Name: {loggedInUser.name}</p> */}
       <Router>
           <Header/>
+          
           <Switch>
             <Route path="/home">
               <Home></Home>
             </Route>
 
-            <Route path="/addProduct">
-              <AddProduct></AddProduct>
-            </Route>
-
-            <PrivateRoute path="/checkout">
-              <Checkout></Checkout>
-            </PrivateRoute>
+            <Route path="/admin">
+              <DashBoard></DashBoard>
+            </Route>  
 
             <PrivateRoute path="/product/:productId">
               <Checkout></Checkout>

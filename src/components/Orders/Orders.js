@@ -6,6 +6,8 @@ const Orders = () => {
 
     const [orders, setOrders] = useState([]);
 
+    const [totalOrders, setTotalOrders] = useState(orders.length);
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     let count = 0;
@@ -26,24 +28,43 @@ const Orders = () => {
         )
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [])
+    }, [totalOrders])
+
+    const handleDeleteOrder = (id) => {
+        
+        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json()) // or res.json()
+            .then(data => {
+                if(data){
+                    setTotalOrders(totalOrders - 1);                  
+                }
+                else{
+                    alert('Unable to delete Order');
+                }
+            })
+        console.log('deleted ', id);
+        
+    }
 
 
     return (
-        <div>
-            <h1>Total orders {orders.length}</h1>
+        <div className="container">
+            <h3>Total orders from {loggedInUser.name} are {orders.length}</h3>
 
             <table className="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Order Date</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 {
-                    orders.map(order => <Order order={order} key={order._id} count={++count}></Order>)
+                    orders.map(order => <Order order={order} key={order._id} count={++count} handleDeleteOrder={handleDeleteOrder}></Order>)
                 }
             </table>
         </div>

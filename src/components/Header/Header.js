@@ -17,15 +17,12 @@ const Header = () => {
                     </li>
 
                     <li>
-                        <Link to="/addProduct">Add product</Link>
-                    </li>
-
-                    <li>
                         <Link to="/orders">Orders</Link>
+
                     </li>
 
                     <li>
-                        <Link to="/checkout">Checkout</Link>
+                        <Link to="/admin">Admin</Link>
                     </li>
                     <li>
                         <Link to="/login">{loggedInUser.email ? loggedInUser.name : 'Login'}</Link>

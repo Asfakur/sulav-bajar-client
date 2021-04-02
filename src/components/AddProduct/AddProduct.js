@@ -27,10 +27,10 @@ const AddProduct = () => {
         // .then(res => console.log('server side response', res));
         .then(res => {
             if(res.ok){
-                alert(productData.name + 'added successfully to database');
+                alert(productData.name + ' added successfully to database');
             }
             else{
-                alert(productData.name + 'Product not added. Please try again');
+                alert(productData.name + ' product not added. Please try again');
             }
         });
 
