@@ -13,6 +13,9 @@ const Header = () => {
                 <ul>
 
                     <li>
+                        <Link to="/home">Sulav Bajar</Link>
+                    </li>
+                    <li>
                         <Link to="/home">Home</Link>
                     </li>
 

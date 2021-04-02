@@ -6,10 +6,11 @@ import Sidebar from './Sidebar';
 
 const DashBoard = () => {
     return (
-        <div className="container-fluid row">
-            {/* <h1>Admin Dashboard</h1> */}
+        <div>
+            <h1 className="text-center">Admin Dashboard</h1>
+            <div className="container-fluid row">
 
-            {/* <div className=""> */}
+                {/* <div className=""> */}
                 <div className="col-sm-3">
                     <Sidebar></Sidebar>
                 </div>
@@ -18,10 +19,11 @@ const DashBoard = () => {
                     <Route path="/admin/manage" component={ManageProduct}></Route>
                     <Route path="/admin/add" component={AddProduct}></Route>
                 </div>
-            {/* </div> */}
+                {/* </div> */}
 
 
 
+            </div>
         </div>
     );
 };

@@ -20,6 +20,10 @@ const Login = () => {
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
     }
+
+    const signOut = () => {
+        setLoggedInUser([]);
+    }
     const handleGoogleSignIn = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -44,9 +48,22 @@ const Login = () => {
     }
     return (
         <div>
-            <h1>Please log In</h1>
-            <button onClick={handleGoogleSignIn}>Google Sign In</button>
+            {
+                loggedInUser.email ?
+                <div className="container text-center">
+                    <h1>Logout</h1>
+                    <button className="btn btn-danger btn-lg" onClick={signOut}>Log Out</button>
+                </div>
+                :
+                <div className="container text-center">
+                    <h1>Please log In To continue</h1>
+                    <button className="btn btn-dark btn-lg" onClick={handleGoogleSignIn}>Continue with Google</button>
+                </div>
+
+            }
+
         </div>
+
     );
 };
 

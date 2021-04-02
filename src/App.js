@@ -29,9 +29,9 @@ function App() {
               <Home></Home>
             </Route>
 
-            <Route path="/admin">
+            <PrivateRoute path="/admin">
               <DashBoard></DashBoard>
-            </Route>  
+            </PrivateRoute>  
 
             <PrivateRoute path="/product/:productId">
               <Checkout></Checkout>

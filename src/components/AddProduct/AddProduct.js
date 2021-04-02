@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router';
 
 const AddProduct = () => {
 
     const { register, handleSubmit, watch, errors } = useForm(); //React Hook Form destructuring 
 
     const [imageURL, setImageURL] = useState();
+
+    let history = useHistory();
 
     const onSubmit = formData => {
         const productData = {
@@ -16,7 +19,7 @@ const AddProduct = () => {
         }
 
         //send to back end
-        const url = 'http://localhost:5000/addProduct';
+        const url = 'https://radiant-hamlet-99889.herokuapp.com/addProduct';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -27,7 +30,9 @@ const AddProduct = () => {
         // .then(res => console.log('server side response', res));
         .then(res => {
             if(res.ok){
+                // <Redirect to="/orders" />
                 alert(productData.name + ' added successfully to database');
+                history.push("/home");
             }
             else{
                 alert(productData.name + ' product not added. Please try again');
@@ -66,7 +71,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div>
+        <div className="border border-dark p-3 rounded bg-light">
             <h1>Add Product Component</h1>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -79,7 +84,7 @@ const AddProduct = () => {
                 <br />
 
                 <p>Weight</p>
-                <input name="weight" type="text" ref={register} />
+                <input name="weight" type="text" ref={register} placeholder="Weight per unit" />
                 <br />
 
                 <br />
@@ -87,7 +92,7 @@ const AddProduct = () => {
                 <br />
                 <br />
 
-                <input type="submit" value="Add Product" />
+                <input type="submit" value="Add Product" className="btn btn-success" />
             </form>
         </div>
     );

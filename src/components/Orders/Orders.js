@@ -17,7 +17,7 @@ const Orders = () => {
         email: loggedInUser.email
     }
     useEffect(() => {
-        fetch('http://localhost:5000/orders',
+        fetch('https://radiant-hamlet-99889.herokuapp.com/orders',
             {
                 method: 'POST',
                 headers: {
@@ -32,7 +32,7 @@ const Orders = () => {
 
     const handleDeleteOrder = (id) => {
         
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        fetch(`https://radiant-hamlet-99889.herokuapp.com/deleteOrder/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json()) // or res.json()
