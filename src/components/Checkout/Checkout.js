@@ -45,8 +45,6 @@ const Checkout = () => {
 
             })
 
-        // console.log('order data', orderDetails);
-
     }
 
     return (

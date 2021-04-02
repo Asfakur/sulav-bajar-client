@@ -27,7 +27,6 @@ const AddProduct = () => {
             },
             body: JSON.stringify(productData)
         })
-        // .then(res => console.log('server side response', res));
         .then(res => {
             if(res.ok){
                 // <Redirect to="/orders" />
@@ -41,9 +40,7 @@ const AddProduct = () => {
 
     };
     
-
     const handleImageUpload = event => {
-        // console.log(event.target.files[0]);
 
         const imageData = new FormData();
         imageData.set('key', 'a0df80bb39236cc860e662c5acb1ab7c');
@@ -58,12 +55,6 @@ const AddProduct = () => {
                 
                 const imgURL = response.data.data.display_url;
                 setImageURL(imgURL);
-                // if(isSuccess){
-                //     setImageURL(imgURL);
-                //     alert('image upload complete');
-                //     console.log(isSuccess);
-                // }
-
             })
             .catch(function (error) {
                 console.log(error);

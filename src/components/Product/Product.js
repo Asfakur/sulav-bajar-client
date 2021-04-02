@@ -2,15 +2,13 @@ import React from 'react';
 import { useHistory } from 'react-router';
 
 const Product = ({ product }) => {
-    // const {name, price}
 
     const history = useHistory()
 
     const handleBuyProduct = () => {
-        // console.log('bye Product');
-        // console.log(product);
+        
         history.push(`/product/${product._id}`);
-        // console.log(history);
+        
     }
     return (
         <div className="col-md-4 bg-white">

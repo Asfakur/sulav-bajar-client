@@ -22,7 +22,6 @@ const ManageProduct = () => {
         })
             .then(res => res.json()) // or res.json()
             .then(data => {
-                // console.log("res", data);
                 if (data) {
                     // alert(data.name +' deleted successfully');
                     setTotal(total - 1);

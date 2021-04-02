@@ -2,7 +2,7 @@ import React from 'react';
 
 const DeleteProduct = ({product , handleDelete}) => {
     const { name, price, weight, _id} = product;
-    // console.log(product);
+
     return (
         <tbody>
             <tr>

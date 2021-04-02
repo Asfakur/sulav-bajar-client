@@ -10,7 +10,6 @@ const DashBoard = () => {
             <h1 className="text-center">Admin Dashboard</h1>
             <div className="container-fluid row">
 
-                {/* <div className=""> */}
                 <div className="col-sm-3">
                     <Sidebar></Sidebar>
                 </div>
@@ -19,9 +18,6 @@ const DashBoard = () => {
                     <Route path="/admin/manage" component={ManageProduct}></Route>
                     <Route path="/admin/add" component={AddProduct}></Route>
                 </div>
-                {/* </div> */}
-
-
 
             </div>
         </div>
