@@ -51,7 +51,8 @@ const Orders = () => {
 
     return (
         <div className="container">
-            <h3>Total orders from {loggedInUser.name} are {orders.length}</h3>
+            <h3>Your total orders are {orders.length}</h3>
+            <h4 className="text-danger">You can delete your Order if you wish</h4>
 
             <table className="table table-hover">
                 <thead>

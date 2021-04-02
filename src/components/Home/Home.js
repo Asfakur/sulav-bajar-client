@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Product from '../components/Product/Product';
+import Product from '../Product/Product';
+import DeleteProduct from '../DeleteProduct/DeleteProduct';
 
 const Home = () => {
 
