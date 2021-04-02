@@ -77,21 +77,21 @@ const AddProduct = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <p>Product Name</p>
                 <input name="productName" type="text" ref={register} />
-                <br />
-
-                <p>Add Price</p>
-                <input name="price" type="text" ref={register} />
-                <br />
-
-                <p>Weight</p>
-                <input name="weight" type="text" ref={register} placeholder="Weight per unit" />
-                <br />
-
+                <br/>
                 <br />
                 <input name="img" type="file" onChange={handleImageUpload} />
                 <br />
                 <br />
 
+                <p>Add Price</p>
+                <input name="price" type="text" ref={register} />
+                <br/>
+                <br />
+
+                <p>Weight</p>
+                <input name="weight" type="text" ref={register} placeholder="Weight with unit" />
+                <br />
+                <br />             
                 <input type="submit" value="Add Product" className="btn btn-success" />
             </form>
         </div>

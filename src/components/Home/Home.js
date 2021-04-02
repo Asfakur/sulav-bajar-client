@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
-import DeleteProduct from '../DeleteProduct/DeleteProduct';
 import { Spinner } from 'react-bootstrap';
 
 const Home = () => {
@@ -17,7 +16,7 @@ const Home = () => {
     return (
         <div className="container-fluid">
             {
-                products.length !== 0 ?
+                products.length?
                     '' : <div className='text-center p-4'>
                             <Spinner animation='border' variant='warning' />
                         </div>
